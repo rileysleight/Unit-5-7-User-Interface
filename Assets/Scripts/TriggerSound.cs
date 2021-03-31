@@ -21,7 +21,7 @@ public class TriggerSound : MonoBehaviour, ISelectHandler , IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         //print("entered");
-        AudioManager.instance.Play("MenuPointerEnter");
+        AudioManager.instance.Play("MenuHover");
     }
 
     public void OnSelect( BaseEventData eventData )

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DummyGame : MonoBehaviour
 {
-   public void QuitToMenu () 
+   public void QuitToMenu (string Menu) 
    {
-      SceneManager.LoadScene (0);
+      SceneManager.LoadScene(Menu);
    }
 }
