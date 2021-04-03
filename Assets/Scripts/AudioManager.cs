@@ -70,5 +70,4 @@ public class AudioManager : MonoBehaviour
 		s.source.volume = volume;
 		s.volume = volume;
 	}
-
 }
