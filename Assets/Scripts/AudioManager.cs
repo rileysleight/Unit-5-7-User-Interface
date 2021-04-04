@@ -1,5 +1,6 @@
 ﻿using UnityEngine.Audio;
 using System;
+using UnityEngine.UI;
 using UnityEngine;
 
 // to do - watch this brackey's tutorial and implement the audio manager
@@ -7,6 +8,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+	public Slider MusicSlider;
+	public Slider EffectsSlider;
+    public Toggle MusicToggle;
+    
 
 	public static AudioManager instance;
 
@@ -39,7 +44,14 @@ public class AudioManager : MonoBehaviour
 			sound.source = gameObject.AddComponent<AudioSource>();
 			sound.source.clip = sound.clip;
 			sound.source.outputAudioMixerGroup = mixerGroup;
+
+			
 		}
+	}
+
+	void Start ()
+	{
+		Play("MenuMusic");
 	}
 
 	public void Play(string sound)
@@ -54,6 +66,7 @@ public class AudioManager : MonoBehaviour
 
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+		s.source.loop = s.loop;
 
 		s.source.Play();
 	}
